@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+body{
+background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/green_dust_scratch.png);
+}
+.Header{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: purple;
+  color: white;
+  padding: 30px;
+  font-size: 30px;
+  
+}
+.Images{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+
+  
+ 
+    
+}
+.Image-container{
+  border: 1px solid gray;
+  margin: 50px 10%;
+ flex: 1 0 calc(13%-20px);
+ 
+ 
+}
+img{
+  width:100px;
+}
