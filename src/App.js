@@ -84,6 +84,7 @@ class App extends Component {
     images: images
   }
 
+  
   shuffleArray = array => {
     for (
       let i = array.length - 1;
@@ -101,8 +102,8 @@ class App extends Component {
 handleimageclick=(id) =>{
   console.log(id)
   this.setState({
-    score: this.state.score + 1
-  })
+    score: this.state.score + 1})
+    
   // figure out how to change beenclicked to TRUE
   // tip: change the original images array and that will automaticall update state
   // use id to determine which one to change
