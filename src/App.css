@@ -15,19 +15,17 @@ background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/g
 }
 .Images{
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-
-  
- 
-    
+   grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-gap: 30px;
+  padding: 20px; 
+  width: 1000px;
+  margin: auto;  
 }
-.Image-container{
+.Images > div{
   border: 1px solid gray;
-  margin: 50px 10%;
- flex: 1 0 calc(13%-20px);
- 
- 
+  padding: 10px;
 }
+
 img{
-  width:100px;
+  width:100%;
 }

@@ -101,23 +101,58 @@ class App extends Component {
   
 handleimageclick=(id) =>{
   console.log(id)
-  this.setState({
-    score: this.state.score + 1})
+  
+
+  for (let i = 0; i < images.length; i++) {
+
+
+    if(images[i].id === id){
+      if(images[i].beenClicked=== true){
+        alert("Game is Over!")
+        if(this.state.score > this.state.highScore){
+          this.setState({
+            highScore: this.state.score
+          })
+        }
+        this.setState({
+          score: 0
+        })
+        for (let i = 0; i < images.length; i++) {
+         images[i].beenClicked= false
+          
+        }
+
+      
+      }else{
+        this.setState({
+          score: this.state.score + 1
+        })
+         
+        images[i].beenClicked = true;
+         
+      }
+    }
+  
+
+   
+
+    
+  }
     
   // figure out how to change beenclicked to TRUE
   // tip: change the original images array and that will automaticall update state
   // use id to determine which one to change
-  let images= this.shuffleArray([...this.state.images]);
+   images= this.shuffleArray([...this.state.images]);
   this.setState({images:images})
 }
 
   render() {
     var displayImages= this.state.images.map(eachItem =>
-      <div className= "Image-container"><img onClick={()=> this.handleimageclick(eachItem.id)} key={eachItem.id} alt={eachItem.id} src={eachItem.path}></img>
+      <div onClick={()=> this.handleimageclick(eachItem.id)} key={eachItem.id} className= "Image-container"><img  key={eachItem.id} alt={eachItem.id} src={eachItem.path}></img>
     </div>
     )
     return (
-      <wrapper>
+      <React.Fragment>
       <div className="App">
        <div className="Header">
         <div>Christmas Clicky</div>
@@ -126,7 +161,7 @@ handleimageclick=(id) =>{
        </div>
         <div className="Images">{displayImages}</div> 
       </div>
-      </wrapper>
+      </React.Fragment>
       );
   }
 };
